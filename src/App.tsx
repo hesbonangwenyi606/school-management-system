@@ -1,16 +1,15 @@
+import React, { useState } from "react";
+import { Student } from "@/components/AddStudent";
+import AddStudentPage from "./pages/AddStudentPage";
+import StudentDirectoryPage from "./pages/StudentDirectoryPage";
+import Index from "./pages/Index";
+import NotFound from "./pages/NotFound";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "@/components/theme-provider";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ThemeProvider } from "@/components/theme-provider";
-import React, { useState } from "react";
-
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
-import AddStudentPage from "./pages/AddStudentPage";
-import StudentDirectoryPage from "./pages/StudentDirectoryPage";
-import { Student } from "@/components/AddStudent";
 
 const queryClient = new QueryClient();
 

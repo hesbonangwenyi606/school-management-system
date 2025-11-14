@@ -13,7 +13,7 @@ const StudentDirectoryPage: React.FC<Props> = ({ students }) => {
         <p className="text-gray-600">No students added yet.</p>
       ) : (
         <ul className="space-y-2">
-          {students.map((s) => (
+          {students.map(s => (
             <li key={s.id} className="bg-white p-4 rounded shadow flex justify-between">
               <span>{s.name} ({s.grade}, Age {s.age})</span>
               <span>{s.email}</span>
