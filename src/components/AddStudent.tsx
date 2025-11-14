@@ -38,7 +38,7 @@ export const AddStudent: React.FC<AddStudentProps> = ({ onAddStudent }) => {
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg">
+    <div className="max-w-md w-full mx-auto bg-white p-6 rounded-lg shadow-lg">
       <h2 className="text-2xl font-bold mb-4 text-blue-900">Add New Student</h2>
       <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
         <input type="text" name="name" value={student.name} onChange={handleChange} placeholder="Full Name" className="border px-4 py-2 rounded-lg" />
@@ -50,4 +50,3 @@ export const AddStudent: React.FC<AddStudentProps> = ({ onAddStudent }) => {
     </div>
   );
 };
-

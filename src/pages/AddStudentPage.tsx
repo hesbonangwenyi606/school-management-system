@@ -21,7 +21,6 @@ const AddStudentPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6">
       <AddStudent onAddStudent={handleAddStudent} />
-
       <div className="mt-8 w-full max-w-3xl">
         <h2 className="text-2xl font-bold mb-4 text-blue-900">Student List</h2>
         {students.length === 0 ? (
