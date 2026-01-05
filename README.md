@@ -33,3 +33,7 @@ git clone https://github.com/hesbonangwenyi606/school-management-system.git
 Navigate into the project directory:
 
 cd school-management-system
+
+Install dependencies:
+
+npm install
