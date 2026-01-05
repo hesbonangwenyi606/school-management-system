@@ -1,6 +1,5 @@
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
-import CountUp from 'react-countup';
 
 // Reusable StatCard
 interface StatCardProps {
@@ -17,9 +16,7 @@ const StatCard: React.FC<StatCardProps> = ({ title, value, trend, bgColor, icon 
       <div className="p-3 bg-white bg-opacity-20 rounded-full mr-4">{icon}</div>
       <div>
         <p className="text-sm font-medium">{title}</p>
-        <p className="text-2xl font-bold">
-          {typeof value === 'number' ? <CountUp end={value} duration={1.5} /> : value}
-        </p>
+        <p className="text-2xl font-bold">{value}</p>
         {trend && <p className="text-xs mt-1">{trend}</p>}
       </div>
     </div>
@@ -92,7 +89,7 @@ export const DashboardView: React.FC = () => {
         />
       </div>
 
-      {/* Charts and Lists */}
+      {/* Charts and Recent Activity */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Attendance Chart */}
         <div className="bg-white rounded-lg shadow-md p-6">
