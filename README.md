@@ -1,5 +1,4 @@
 # School Management System
-
 A **React + TypeScript + Vite** frontend template for a **School Management System**. This project provides a minimal, fast setup with modern frontend tools and demonstrates skills in React development, TypeScript, Vite configuration, and project structuring.
 
 ## Demo
