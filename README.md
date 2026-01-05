@@ -28,7 +28,7 @@ Navigate into the project directory:
 cd school-management-system
 
 ## Install dependencies:
-**npm install
+npm install
 Run the development server:
 
 npm run dev
