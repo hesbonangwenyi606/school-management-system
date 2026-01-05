@@ -36,7 +36,7 @@ export const GradesView: React.FC = () => {
           { grade: 'B', count: 35, percentage: 44 },
           { grade: 'C', count: 10, percentage: 12 },
           { grade: 'D', count: 5, percentage: 6 },
-          { grade: 'F', count: 5, percentage: 6 },
+          { grade: 'E', count: 5, percentage: 6 },
         ],
         performance: { avgGPA: 3.5, highestScore: 98, passRate: 95 },
       },
