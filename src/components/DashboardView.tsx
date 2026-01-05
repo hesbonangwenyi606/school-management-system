@@ -40,11 +40,26 @@ export const DashboardView: React.FC = () => {
   ];
 
   const upcomingEvents = [
-    { event: 'Parent-Teacher Conference', date: 'Nov 20, 2025' },
-    { event: 'Final Exams Begin', date: 'Dec 1, 2025' },
-    { event: 'Winter Break', date: 'Dec 15, 2025' },
-    { event: 'Science Fair', date: 'Jan 10, 2026' },
+    { event: 'Parent-Teacher Conference', date: 'Nov 20, 2025', type: 'Meeting' },
+    { event: 'Final Exams Begin', date: 'Dec 1, 2025', type: 'Exam' },
+    { event: 'Winter Break', date: 'Dec 15, 2025', type: 'Holiday' },
+    { event: 'Science Fair', date: 'Jan 10, 2026', type: 'Event' },
   ];
+
+  // Badge colors based on type
+  const eventBadgeColor = (type: string) => {
+    switch (type) {
+      case 'Exam':
+        return 'bg-red-200 text-red-800';
+      case 'Holiday':
+        return 'bg-green-200 text-green-800';
+      case 'Meeting':
+        return 'bg-yellow-200 text-yellow-800';
+      case 'Event':
+      default:
+        return 'bg-blue-200 text-blue-800';
+    }
+  };
 
   return (
     <div className="space-y-8 p-6 bg-gray-50 min-h-screen">
@@ -124,13 +139,18 @@ export const DashboardView: React.FC = () => {
         </div>
       </div>
 
-      {/* Upcoming Events */}
+      {/* Upcoming Events with Badges */}
       <div className="bg-white rounded-lg shadow-md p-6">
         <h3 className="text-xl font-semibold mb-4">Upcoming Events</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {upcomingEvents.map((item, i) => (
             <div key={i} className="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
-              <p className="font-medium">{item.event}</p>
+              <div className="flex items-center gap-2">
+                <p className="font-medium">{item.event}</p>
+                <span className={`px-2 py-0.5 rounded text-xs font-semibold ${eventBadgeColor(item.type)}`}>
+                  {item.type}
+                </span>
+              </div>
               <p className="text-sm text-gray-600">{item.date}</p>
             </div>
           ))}
