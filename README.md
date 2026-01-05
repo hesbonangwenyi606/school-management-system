@@ -58,7 +58,6 @@ school-management-system/
 └── vite.config.ts           # Vite configuration
 
 Contributing
-
 Contributions are welcome! If you want to improve the project, please:
 Fork the repository
 Create a new branch (git checkout -b feature/YourFeature)
