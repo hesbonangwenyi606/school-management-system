@@ -56,3 +56,19 @@ school-management-system/
 ├── tsconfig.json            # TypeScript configuration
 ├── tailwind.config.ts       # Tailwind CSS configuration
 └── vite.config.ts           # Vite configuration
+
+Contributing
+
+Contributions are welcome! If you want to improve the project, please:
+
+Fork the repository
+
+Create a new branch (git checkout -b feature/YourFeature)
+
+Make your changes
+
+Commit your changes (git commit -m "Add some feature")
+
+Push to the branch (git push origin feature/YourFeature)
+
+Open a Pull Request
