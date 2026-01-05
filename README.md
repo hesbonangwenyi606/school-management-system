@@ -2,7 +2,7 @@
 A **React + TypeScript + Vite** frontend template for a **School Management System**. This project provides a minimal, fast setup with modern frontend tools and demonstrates skills in React development, TypeScript, Vite configuration, and project structuring.
 
 ## Demo
-Check out the live demo here: [du(https://dulcet-liger-a451ac.netlify.app/)
+Check out the live demo here:(https://dulcet-liger-a451ac.netlify.app/)
 
 ## Features
 - Built with **React** and **TypeScript**
