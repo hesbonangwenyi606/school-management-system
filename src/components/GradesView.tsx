@@ -15,36 +15,38 @@ export const GradesView: React.FC = () => {
 
   const grades = ['A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'E'];
 
-  // Predefined dataset for Grades 9–12, all subjects
-  const gradeData: Record<string, Record<string, { distribution: GradeInfo[]; performance: PerformanceInfo }>> = {
-    'Grade 9': {},
-    'Grade 10': {},
-    'Grade 11': {},
-    'Grade 12': {},
+  // Example: Generate some random distribution for demonstration
+  const generateDistribution = (): GradeInfo[] => {
+    const counts = Array.from({ length: grades.length }, () => Math.floor(Math.random() * 15 + 5));
+    const total = counts.reduce((a, b) => a + b, 0);
+    return grades.map((grade, i) => ({
+      grade,
+      count: counts[i],
+      percentage: Math.round((counts[i] / total) * 100),
+    }));
   };
 
-  // Populate each subject with random realistic data (you can replace this with actual data)
-  Object.keys(gradeData).forEach((gradeLevel) => {
+  // Example: Random performance
+  const generatePerformance = (): PerformanceInfo => ({
+    avgGPA: +(2 + Math.random() * 2).toFixed(2), // 2.0–4.0
+    highestScore: Math.floor(80 + Math.random() * 20), // 80–100
+    passRate: Math.floor(75 + Math.random() * 25), // 75–100%
+  });
+
+  // Full dataset: Grades 9–12, all subjects
+  const gradeData: Record<string, Record<string, { distribution: GradeInfo[]; performance: PerformanceInfo }>> = {};
+
+  ['Grade 9', 'Grade 10', 'Grade 11', 'Grade 12'].forEach((gradeLevel) => {
+    gradeData[gradeLevel] = {};
     subjects.forEach((subject) => {
-      // Generate distribution
-      const counts = [10,8,12,15,10,8,5,3,2,1,1,1]; // length 12 for A-E style
-      const total = counts.reduce((a,b)=>a+b,0);
       gradeData[gradeLevel][subject] = {
-        distribution: grades.map((g, i) => ({
-          grade: g,
-          count: counts[i] || 0,
-          percentage: Math.round(((counts[i] || 0) / total) * 100),
-        })),
-        performance: {
-          avgGPA: +(2 + Math.random() * 2).toFixed(2), // 2.0–4.0
-          highestScore: Math.floor(80 + Math.random()*20), // 80–100
-          passRate: Math.floor(75 + Math.random()*25), // 75–100%
-        },
+        distribution: generateDistribution(),
+        performance: generatePerformance(),
       };
     });
   });
 
-  // Safe access
+  // Get current subject data
   const currentData = gradeData[selectedGrade]?.[selectedSubject];
   const gradeDistribution = currentData?.distribution || [];
   const performance = currentData?.performance || { avgGPA: 0, highestScore: 0, passRate: 0 };
@@ -53,7 +55,7 @@ export const GradesView: React.FC = () => {
     <div className="space-y-6">
       <h2 className="text-3xl font-bold text-gray-900">Grade Management</h2>
 
-      {/* Grade & Subject Selector */}
+      {/* Select Grade & Subject */}
       <div className="bg-white rounded-lg shadow-md p-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
@@ -63,7 +65,7 @@ export const GradesView: React.FC = () => {
               onChange={(e) => setSelectedGrade(e.target.value)}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
             >
-              {['Grade 9','Grade 10','Grade 11','Grade 12'].map((g)=>(
+              {['Grade 9', 'Grade 10', 'Grade 11', 'Grade 12'].map((g) => (
                 <option key={g}>{g}</option>
               ))}
             </select>
@@ -72,11 +74,11 @@ export const GradesView: React.FC = () => {
             <label className="block text-sm font-medium text-gray-700 mb-2">Select Subject</label>
             <select
               value={selectedSubject}
-              onChange={(e)=>setSelectedSubject(e.target.value)}
+              onChange={(e) => setSelectedSubject(e.target.value)}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
             >
-              {subjects.map((sub)=>(
-                <option key={sub}>{sub}</option>
+              {subjects.map((subject) => (
+                <option key={subject}>{subject}</option>
               ))}
             </select>
           </div>
@@ -88,7 +90,7 @@ export const GradesView: React.FC = () => {
         <div className="bg-white rounded-lg shadow-md p-6">
           <h3 className="text-xl font-semibold mb-4">Grade Distribution</h3>
           <div className="space-y-4">
-            {gradeDistribution.map((item)=>(
+            {gradeDistribution.map((item) => (
               <div key={item.grade}>
                 <div className="flex justify-between mb-1">
                   <span className="font-semibold">Grade {item.grade}</span>
@@ -102,7 +104,7 @@ export const GradesView: React.FC = () => {
                       item.grade.startsWith('C') ? 'bg-yellow-500' :
                       item.grade.startsWith('D') ? 'bg-orange-500' : 'bg-red-500'
                     }`}
-                    style={{ width:`${item.percentage*2}%` }}
+                    style={{ width: `${item.percentage * 2}%` }}
                   />
                 </div>
               </div>
