@@ -16,7 +16,6 @@ Check out the live demo here: [dulcet-liger-a451ac.netlify.app](https://dulcet-l
 - Responsive UI (can be combined with Tailwind CSS for styling)
 
 ## Tech Stack
-
 - **Frontend:** React, TypeScript  
 - **Build Tool:** Vite  
 - **Styling:** Tailwind CSS  
