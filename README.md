@@ -19,7 +19,7 @@ A **React + TypeScript + Vite** frontend template for a **School Management Syst
 ## Installation
 1. Clone the repository:
 ```bash
-git clone https://github.
+git clone 
 
 Navigate into the project directory:
 cd school-management-system
