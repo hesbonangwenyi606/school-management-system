@@ -41,7 +41,7 @@ school-management-system/
 ├── src/                     # Source files
 │   ├── components/          # Reusable React components
 │   ├── pages/               # Page components
-│   ├── App.tsx              #  App 
+│   ├── App.tsx              #  
 │   └── main.tsx         
 ├── package.json             
 ├── tsconfig.json            
