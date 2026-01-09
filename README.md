@@ -46,7 +46,7 @@ school-management-system/
 ├── package.json             # Project metadata and dependencies
 ├── tsconfig.json            # TypeScript configuration
 ├── tailwind.config.ts       # Tailwind CSS configuration
-└── vite.config.ts           # 
+└── vite.config.ts           
 
 ### Contributing
 Contributions are welcome! If you want to improve the project, please:
