@@ -39,7 +39,7 @@ school-management-system/
 │
 ├── public/                  # Static assets
 ├── src/                     # Source files
-│   ├── components/          # Reusable React c
+│   ├── components/          # Reusable Rea
 │   ├── pages/               
 │   ├── App.tsx               
 │   └── main.tsx         
