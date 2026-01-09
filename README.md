@@ -37,7 +37,7 @@ Open your browser at http://localhost:5173
 Project Structure
 school-management-system/
 │
-├── public/                  # Static assets
+├── public/                  # Static 
 ├── src/                     
 │   ├── components/          
 │   ├── pages/               
